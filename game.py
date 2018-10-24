@@ -253,31 +253,25 @@ def execute_take(item_id):
     "You cannot take that."
     """
 
-    found_item = False      # set boolean value
+    found_item = False
     
     for i in current_room["items"] :
         
         if i["id"] == item_id :
-
-            # add item to inventory and remove it from the room's items
             inventory.append(i)
             current_room["items"].remove(i)
 
-            # print message to user
             print("You now possess the " + item_id + ".")
             print()
-            
             time.sleep(0.5)
-            found_item = True
 
-            # set room descriptions
+            found_item = True
             if item_id in item_room_descriptions:
                 current_room["description"] = item_room_descriptions[item_id]
             break
 
         
     if found_item == False :
-        # invalid input
         print("You cannot take that.")  
 
 
@@ -291,21 +285,17 @@ def execute_drop(item_id):
     
     for i in inventory :
         if i["id"] == item_id :
-
-            # add item to room's items and remove from inventory
             current_room["items"].append(i)
             inventory.remove(i)
 
-            # print message to user
             print("You no longer hold the " + item_id + ".")
             print()
-            
             time.sleep(0.5)
+
             found_item = True
             break
         
     if found_item == False :
-        # invalid input
         print("You cannot drop that.")    
 
 
@@ -313,7 +303,7 @@ def execute_drop(item_id):
 def execute_talk(people_id):
     """This function takes a people_id as an argument and begins a conversation
     with the person."""
-
+    
     if is_valid_person(current_room["people"], people_id) :
         person_conv = current_room["people"][people_id]["conversation"]
 
@@ -321,7 +311,7 @@ def execute_talk(people_id):
         input("Press ENTER to continue...")
         
         print("\nYou can ask...")
-        qcount = 0\
+        qcount = 0
 
         if not person_conv["questions"] == [] :
             
@@ -349,91 +339,68 @@ def execute_talk(people_id):
 
 
 def execute_play(puzzle):
-    """This function plays a puzzle if available in the room"""
 
     if puzzle in puzzles:
         
         if puzzles[puzzle] in current_room["puzzles"]:
-            # play selected puzzle
             puzzles[puzzle]()
-            
         else:
-            # invalid input
             print("You cannot play that here.")
-            
     else:
         print("That is not a game.")
 
     
 
 def execute_use(item_id, object_id):
-	"""Check if item is in inventory and object is in room
-	then run interaction code
+	"""Check if item is in inventory
+	check if object is in room
+	run interaction code
 	"""
-
-	# initialise variables
+	
 	found_item = False
 	found_object = False
 	a = None
 	b = None
-	
 	for i in inventory :
 		if i["id"] == item_id :
-                        # set item
 			found_item = True
 			a = i
-			
 		if i["id"] == object_id :
-                        # set object
 			found_object = True
 			b = i
-
-	# iterate through room objects and check found_object
 	for i in current_room["objects"]:
 		if i["id"] == object_id:
 			found_object = True
 			b = i
-			
 	if found_item == True and found_object == True:
 		if b["interaction"] != None:
 			funct_run = b["interaction"]
-			
 			funct_run(item_id,object_id)
-
 		else:
 			print("Nothing interesting happens.")
 	else:
 		print("You cannot do that")
-
 			
 def execute_examine(object):
 	"""Check if object is in inventory/room
 	and return 'description' from the objects properties
 	"""
-
-	# initalise variables
+	
 	found_object = False
 	a = None
-	
 	for i in inventory :
-                # check object in inventory
 		if i["id"] == object:
 			found_object = True
 			a = i
-			
 	if found_object == False:
-                # check object in room
 		for i in current_room["objects"]:
 			if i["id"] == object:
 				found_object = True
 				a = i
-				
 	if found_object:
-                # print description if found
 		print(a["description"])
 		
 	else:
-                # invalid input
 		print("You cannot do that.")
 
 
@@ -474,7 +441,7 @@ def execute_command(command):
         else:
             print("Talk to whom?")
             
-    elif command[0] == "play" or command[0] == "answer" or command[0] == "adjust":
+    elif command[0] == "play" or command[0] == "answer":
         if len(command) > 1:
             execute_play(command[1])
         else:
@@ -534,8 +501,6 @@ def move(exits, direction):
 
 def main_menu():
 	# This is the entry point of our program
-
-	# Print the title of the game
 	print("""                                                                                                     
      ##### ##                                /                                      /                
   ######  /##   #                          #/                    #                #/                 
@@ -558,7 +523,6 @@ def main_menu():
                                                /                     /     ###/       /              """)
 											   
 	input("\n\n\n\t\t\t\t\tPress ENTER to play")
-
 	opening()
 
 def opening():
@@ -566,7 +530,6 @@ def opening():
 You have lived in the town all of your life, managing to get an education from the
 your foster-father. One day he comes to you with a letter. He doesn't tell you who it
 is from, he just says to read it:
->>>>>>> more_story
 	
 ------------------------------------------------------------------------------------------------	
 "My beloved son

@@ -212,17 +212,6 @@ item_rock = {
     "interaction": None
 
 }
-item_time_turner = {
-    "id": "timeturner",
-
-    "name": "a time-turner",
-
-    "description": "a magical artifact that looks into people's past",
-
-    "mass": 0,
-
-    "interaction": None
-}
 time_counter = 0
 def inter_turner(item_id,object_id):
     global time_counter
@@ -247,6 +236,17 @@ def inter_turner(item_id,object_id):
     else:
         print("You have used up the magic in this artifact")
 
+item_time_turner = {
+    "id": "timeturner",
+
+    "name": "a time-turner",
+
+    "description": "a magical artifact that looks into people's past",
+
+    "mass": 0,
+
+    "interaction": inter_turner
+}
 
 object_grate = {
     "id": "grate",
@@ -328,11 +328,14 @@ def inter_cure(item_id, object_id):
         from map import room_ante
         from people import people_wizard
 
+
         room_ante["description"] = "new desc. ###"
         room_greathall["people"] = {}
+        room_greathall["objects"] = []
         room_ante["people"] = {"wizard": people_wizard}
-
+        room_ante["objects"] = [object_wizard]
         object_wizard["interaction"] = inter_turner
+
 
 
 
