@@ -83,6 +83,8 @@ def fight(player = player,computer = computer):
 			break
 		elif computer["health"] <= 0:
 			print(art[2])
+			import winsound
+			winsound.PlaySound("victory.wav", winsound.SND_ASYNC | winsound.SND_ALIAS )
 			time.sleep(2)
 			break
 		#breaks fight s

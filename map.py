@@ -9,9 +9,11 @@ room_courtyard = {
     """A square courtyard swept clean
 and filled with the sweet smell of jasmine.
 In the centre lies a large water fountain.
-No furniture to speak of just an ornate door to the grand hall
-and an opening that takes you up a wide set of spiral stairs to the battlements.
-There are flower pots on the wall with beautiful foxgloves growing in them.
+No furniture to speak of just an ornate door to the
+grand hall and an opening that takes you up a wide set of
+spiral stairs to the battlements.
+There are flower pots on the wall with beautiful
+foxgloves growing in them.
     """,
     # exits/people/items in room will be added using functions in game.py
     # (printed in full sentences)
@@ -56,7 +58,11 @@ room_throne = {
     "name": "Throne Room",
 
     "description":
-    """This is the throne room. TODO ---""",
+    """A magnificent room with a grand chandelier hanging from the ceiling.
+The glorious throne sits at the end of the room. The king rest in it
+holding a golden goblet with his viceroy standing next to him.
+The walls are covered in fantastic paintings and the floor is
+completed with an elegant red carpet.""",
 
     "exits": {"east": "Great Hall"},
 
@@ -77,7 +83,8 @@ room_battlements = {
     "description":
     """The wind swept and exposed battlements.
 beyond the grey horizon the enemy may lie in waiting.
-The few soldiers on duty seem more interested in who'll throw the next combo in their dice game.
+The few soldiers on duty seem more interested in who'll throw
+the next combo in their dice game.
 There is a single old boot in the middle of the walkway which seems odd to you.""",
 
     "exits": {"west": "Great Hall", "north": "Courtyard"},

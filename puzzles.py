@@ -82,9 +82,9 @@ def dice_game():
         print("YOU WIN!")
         from player import inventory
         from items import item_money
-
-        inventory.append(item_money)
-        print("Soldier: 'Here take my gold.''") #debugging step
+        if item_money not in inventory:
+            inventory.append(item_money)
+            print("Soldier: 'Here take my gold.''")
     elif Soldier > player:
         print("YOU LOSE!")
     elif player == Soldier:
@@ -94,27 +94,33 @@ def dice_game():
 
 def riddle_lady():
 	"""A riddle is given and the player must answer correctly to progress"""
-	print("Are you ready to answer my riddle?")
-	print("'What's black when you buy it, red when you use it and white when you throw it away?'")
-	ans = input('> ')
-	from gameparser import normalise_input
-	ans2 = normalise_input(ans)
-	if ans2[0] == "coal" or ans2[0] == "charcoal":
-		print("CORRECT!")
-		print("""I wanted to test you, to see if you were worthy.
-Here are some ingredients for a hangover cure. You'll definitely find this useful.
-They need to be mixed with water, so you'll need to find something else to contain it.""")
-		from player import inventory
-		from items import item_ingredients
-		from conversations import conv_lady
-		conv_lady["opening"] = """Leave me be now clerk. I've helped you more than I should."""
-		conv_lady["questions"] = ["But..."]
-		conv_lady["responses"] = ["(The lady turns away from you, she clearly doesn't want to talk)"]
-		inventory.append(item_ingredients)
-		from game import print_inventory_items
-		
-	else:
-		print("WRONG! Try again.")
+	from player import inventory
+	from items import item_ingredients
+	global inventory
+	if item_ingredients not in inventory:
+            print("Are you ready to answer my riddle?")
+            print("'What's black when you buy it, red when you use it and white when you throw it away?'")
+            ans = input('> ')
+            if ans == "":
+                return
+            from gameparser import normalise_input
+            ans2 = normalise_input(ans)
+            if ans2[0] == "coal" or ans2[0] == "charcoal":
+                    print("CORRECT!")
+                    print("""\"I wanted to test you, to see if you were worthy.
+    Here are some ingredients for a hangover cure. You'll definitely find this useful.
+    They need to be mixed with water, so you'll need to find something else to contain it.\"\n""")
+                    from player import inventory
+                    from items import item_ingredients
+                    from conversations import conv_lady
+                    conv_lady["opening"] = """Leave me be now clerk. I've helped you more than I should."""
+                    conv_lady["questions"] = ["But..."]
+                    conv_lady["responses"] = ["(The lady turns away from you, she clearly doesn't want to talk)"]
+                    inventory.append(item_ingredients)
+                    from game import print_inventory_items
+                    
+            else:
+                    print("WRONG! Try again.")
 	
 
 
@@ -130,6 +136,7 @@ def dial_game():
         room_ante["items"].append(item_time_turner)
         room_ante["objects"] = [object_wizard]
         room_ante["puzzles"] = []
+        room_ante["people"] = {}
 
 
 

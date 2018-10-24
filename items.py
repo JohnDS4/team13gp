@@ -235,6 +235,8 @@ clearly the door to the south is now open again.
             room_greathall["objects"] = [object_king, object_viceroy, object_lady2, object_soldier1, object_soldier2]
             room_greathall["exits"] = {"west": "Throne Room"}
             room_ante["exits"] = {"south": "Great Hall"}
+            room_ante["people"] = {}
+            room_ante["objects"] = {}
             room_greathall["description"] = """The door to the anteroom immediately locks behind you.
 The room is different to how you saw it before, everything has been cleaned and servants are preparing the table.
 Everyone except the wizard is in here sitting down waiting for a meal with their drinks.
@@ -243,6 +245,8 @@ This seems like the perfect opportunity to make your move. The wizard's vision m
             room_throne["description"] = """The room is quiet and still. You instantly recognise the painting on the far wall from your vision of the wizard's past.
 You remove it from the wall, look behind it and see a bottle of poison."""
             room_throne["items"] = [item_poison]
+            room_throne["people"] = {}
+            room_throne["objects"] = ()
         elif object_id== "king":
             print("""You suddenly feel dizzy and your vision starts to rotate. 
 
@@ -380,9 +384,9 @@ object_lady = {
 
     "description":
         """Catherine of Aragon,
-    a noble lady from a different land.
-    She is weathly and well-spoken, although she
-    still speaks with a Franco-Spanish accent.""",
+a noble lady from a different land.
+She is weathly and well-spoken, although she
+still speaks with a Franco-Spanish accent.""",
 
     "interaction": None
 }
@@ -392,9 +396,9 @@ object_lady2 = {
 
     "description":
         """Catherine of Aragon,
-    a noble lady from a different land.
-    She is weathly and well-spoken, although she
-    still speaks with a Franco-Spanish accent.""",
+a noble lady from a different land.
+She is weathly and well-spoken, although she
+still speaks with a Franco-Spanish accent.""",
 
     "interaction": inter_turner
 }
@@ -409,7 +413,7 @@ def inter_cure(item_id, object_id):
         inventory.remove(item_hangover)
         print("""The wizard seems to recover from his hangover instantly!
 If only you knew what ingredients the lady used to make such a potion.""", "\n")
-        print("I cannot talk here. Meet me in the anteroom")
+        print("\"I cannot talk here. Meet me in the anteroom to the north\"\n")
         conv_wizard["opening"] = people_conversations["wizard_cured"]
         conv_wizard["questions"] = people_conversations["Qwizard_cured"]
         conv_wizard["responses"] = people_conversations["Rwizard_cured"]
@@ -439,7 +443,7 @@ mechanical dial next to it."""
 
     elif item_id == "goblet" and item_hangover2 in inventory:
         print("*The wizard bats the goblet away*")
-        print("$!&@*! I will never drink from such a thing of my own will!")
+        print("\"$!&@*! I will never drink from such a thing of my own will!\"")
         print("(Looks like you'll need to find something else to contain the cure)")
 
     else:
@@ -450,8 +454,8 @@ object_wizard = {
 
     "description":
         """Clearly only a shadow of his former self,
-    hungover or still possibly drunk from the night before,
-    he sits mouth open with his head back, snoring loudly.""",
+hungover or still possibly drunk from the night before,
+he sits mouth open with his head back, snoring loudly.""",
 
     "interaction": inter_cure
 
@@ -461,7 +465,7 @@ object_king = {
     "id": "king",
 
     "description":
-        """This is the king.""",
+        """This is King Wattus Rex.""",
 
     "interaction": inter_turner
 
@@ -471,7 +475,7 @@ object_viceroy = {
     "id": "viceroy",
 
     "description":
-        """This is the viceroy.""",
+        """This is the viceroy. Not well liked around here.""",
 
     "interaction": inter_turner
 
@@ -481,8 +485,8 @@ object_viceroy = {
 def inter_gold(item_id,object_id):
     from player import inventory
     if item_id == 'gold' and item_money in inventory:
-        print("Ah gold, that's loosened my lips a little.")
-        print("Gaius is the old drunken wizard in the great hall.")
+        print("\"Ah gold, that's loosened my lips a little.")
+        print("Gaius is the old drunken wizard in the great hall.\"")
         inventory.remove(item_money)
         from conversations import conv_soldier1
         from conversations import conv_lady
@@ -511,7 +515,7 @@ object_soldier2 = {
     "id": "captain",
 
     "description":
-        """This is the captain of the guard.""",
+        """This is the captain of the guard. A master of military tactics""",
 
     "interaction": inter_turner
 }
@@ -553,6 +557,10 @@ object_painting = {
                  oOO      \  /        OOo   N
              K        ooo OOO OOO ooo
                             B
+
+
+'WHEN THE POINTS OF THE SOLOMONS SEAL BEFALLS ON THIS KINGDOM
+        THE DORMANT CLOCK WILL START TO RUN'
 						   """,
 
     "interaction": None

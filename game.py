@@ -352,58 +352,70 @@ def execute_play(puzzle):
     
 
 def execute_use(item_id, object_id):
-	"""Check if item is in inventory
-	check if object is in room
-	run interaction code
-	"""
-	
-	found_item = False
-	found_object = False
-	a = None
-	b = None
-	for i in inventory :
-		if i["id"] == item_id :
-			found_item = True
-			a = i
-		if i["id"] == object_id :
-			found_object = True
-			b = i
-	for i in current_room["objects"]:
-		if i["id"] == object_id:
-			found_object = True
-			b = i
-	if found_item == True and found_object == True:
-		if b["interaction"] != None:
-			funct_run = b["interaction"]
-			funct_run(item_id,object_id)
-		else:
-			print("Nothing interesting happens.")
-	else:
-		print("You cannot do that")
+    """Check if item is in inventory
+    check if object is in room
+    run interaction code
+    """
+    
+    found_item = False
+    found_object = False
+    a = None
+    b = None
+    for i in inventory :
+	    if i["id"] == item_id :
+	    	found_item = True
+	    	a = i
+	    if i["id"] == object_id :
+	    	found_object = True
+	    	b = i
+    for i in current_room["objects"]:
+	    if i["id"] == object_id:
+	    	found_object = True
+	    	b = i
+    if found_item == True and found_object == True:
+    	if b["interaction"] != None:
+    		funct_run = b["interaction"]
+    		funct_run(item_id,object_id)
+    	else:
+            print("Nothing interesting happens.")
+    else:
+    	print("You cannot do that")
 			
 def execute_examine(object):
-	"""Check if object is in inventory/room
-	and return 'description' from the objects properties
-	"""
+    """Check if object is in inventory/room
+    and return 'description' from the objects properties
+    """
 	
-	found_object = False
-	a = None
-	for i in inventory :
-		if i["id"] == object:
-			found_object = True
-			a = i
-	if found_object == False:
-		for i in current_room["objects"]:
-			if i["id"] == object:
-				found_object = True
-				a = i
-	if found_object:
-		print(a["description"])
-		
-	else:
-		print("You cannot do that.")
+    found_object = False
+    a = None
+    for i in inventory :
+    	if i["id"] == object:
+    		found_object = True
+    		a = i
+    if found_object == False:
+    	for i in current_room["objects"]:
+    		if i["id"] == object:
+    			found_object = True
+    			a = i
+    if found_object:
+    	print(a["description"])
+    	
+    else:
+    	print("You cannot do that.")
 
 
+def execute_help():
+    """Provides a list of possible commands for the user"""
+    print("""COMMANDS:
+-GO <DIRECTION> -- Move to another room
+-TAKE <ITEM> -- Pick up an item from the room
+-DROP <ITEM> -- Drop an item from your inventory
+-TALK <PERSON> -- Talk to a person in the room
+-EXAMINE <ITEM\OBJECT\PERSON> -- Gives a description of the object in question
+-USE <OBJECT> <OBJECT> -- Use two different objects, items can be used with other items, objects in the room & even other people
+
+There are also a few other special commands such as PLAY and ADJUST to be used in certain scenarios
+""")
 def execute_command(command):
     """This function takes a command (a list of words as returned by
     normalise_input) and, depending on the type of action (the first word of
@@ -451,13 +463,15 @@ def execute_command(command):
         if len(command) > 2:
             execute_use(command[1], command[2])
         else:
-            print("You cannot do that.")
+            print("Use with what?")
 			
     elif command[0] == "examine":
         if len(command) > 1:
             execute_examine(command[1])
         else:
             print("Examine what?")
+    elif command[0] == "help":
+        execute_help()
     else:
         print("This makes no sense.")
 
@@ -501,7 +515,7 @@ def move(exits, direction):
 
 def main_menu():
 	# This is the entry point of our program
-	print("""                                                                                                     
+        print("""                                                                                                     
      ##### ##                                /                                      /                
   ######  /##   #                          #/                    #                #/                 
  /#   /  / ##  ###                   #     ##                   ###               ##           #     
@@ -522,8 +536,9 @@ def main_menu():
                                                 /                     /######  /#      /             
                                                /                     /     ###/       /              """)
 											   
-	input("\n\n\n\t\t\t\t\tPress ENTER to play")
-	opening()
+        print("\n\n\nTEAM13 - Chris Spencer, John Disandolo, Ellis Bailey, Stephanie Fang, Lirui Yang, Noah Giles, Harry Suggett & Jack Davies")
+        input("\n\n\t\t\t\t\tPress ENTER to play")
+        opening()
 
 def opening():
 	print("""\n\nThis story begins in a small town outside of the grand castle Otterberg.
