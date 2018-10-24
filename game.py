@@ -303,7 +303,7 @@ def execute_drop(item_id):
 def execute_talk(people_id):
     """This function takes a people_id as an argument and begins a conversation
     with the person."""
-    
+
     if is_valid_person(current_room["people"], people_id) :
         person_conv = current_room["people"][people_id]["conversation"]
 
@@ -311,7 +311,7 @@ def execute_talk(people_id):
         input("Press ENTER to continue...")
         
         print("\nYou can ask...")
-        qcount = 0
+        qcount = 0\
 
         if not person_conv["questions"] == [] :
             
@@ -375,7 +375,7 @@ def execute_use(item_id, object_id):
 	if found_item == True and found_object == True:
 		if b["interaction"] != None:
 			funct_run = b["interaction"]
-			funct_run(item_id)
+			funct_run(item_id,object_id)
 		else:
 			print("Nothing interesting happens.")
 	else:
@@ -441,7 +441,7 @@ def execute_command(command):
         else:
             print("Talk to whom?")
             
-    elif command[0] == "play" or command[0] == "answer":
+    elif command[0] == "play" or command[0] == "answer" or command[0] == "adjust":
         if len(command) > 1:
             execute_play(command[1])
         else:

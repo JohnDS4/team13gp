@@ -100,13 +100,13 @@ room_ante = {
 
     "exits": {"south": "Great Hall"},
 
-    "items": [],
+    "items": [item_time_turner],
 
     "people": {},
 
-    "puzzles" : [],
+    "puzzles" : [dial_game],
 
-    "objects": []
+    "objects": [object_painting, object_dial]
 
 }
 
