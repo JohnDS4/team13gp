@@ -73,8 +73,9 @@ art = {
 def fight(player,computer):
 	'''this function takes a player dict and people dict as input
 	fight(people_player{} , people_x{})'''
-
+	t = time.sleep(1)
 	while True:
+		t = 1
 		#while function for fight 
 		if player["health"] <= 0:			
 			print(art[1])
@@ -87,6 +88,7 @@ def fight(player,computer):
 		#breaks fight s
 		a = random.randint(1,5)		
 		print(accsi_print[a])
+		time.sleep(t)
 		os.system('cls')
 		#choses and prints player number to input 
 		b = int(input("Enter number: "))
@@ -112,11 +114,13 @@ def fight(player,computer):
 			print("Your rain of terror is almost over %s \n computer heath is %s" % (computer["name"], computer["health"]))
 			time.sleep(2)
 			os.system('cls')
+			t = 0.5
 		elif b != a and player["health"] < 50 :
 			computer["health"] -= 15
 			print("You've been pretending all tiem %s \n but you cant pretend in combat" % (player["name"]))
 			time.sleep(2)
 			os.system('cls')
+			t = 1
 
 fight(player,computer)
 
