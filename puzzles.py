@@ -93,11 +93,11 @@ def dice_game():
 
 
 def riddle_lady():
-	"""A riddle is given and the player must answer correctly to progress"""
-	from player import inventory
-	from items import item_ingredients
-	global inventory
-	if item_ingredients not in inventory:
+    """A riddle is given and the player must answer correctly to progress"""
+    from player import inventory
+    from items import item_ingredients
+    global inventory
+    if item_ingredients not in inventory:
             print("Are you ready to answer my riddle?")
             print("'What's black when you buy it, red when you use it and white when you throw it away?'")
             ans = input('> ')
@@ -121,7 +121,7 @@ def riddle_lady():
                     
             else:
                     print("WRONG! Try again.")
-	
+    
 
 
 def dial_game():

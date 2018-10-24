@@ -362,46 +362,46 @@ def execute_use(item_id, object_id):
     a = None
     b = None
     for i in inventory :
-	    if i["id"] == item_id :
-	    	found_item = True
-	    	a = i
-	    if i["id"] == object_id :
-	    	found_object = True
-	    	b = i
+        if i["id"] == item_id :
+            found_item = True
+            a = i
+        if i["id"] == object_id :
+            found_object = True
+            b = i
     for i in current_room["objects"]:
-	    if i["id"] == object_id:
-	    	found_object = True
-	    	b = i
+        if i["id"] == object_id:
+            found_object = True
+            b = i
     if found_item == True and found_object == True:
-    	if b["interaction"] != None:
-    		funct_run = b["interaction"]
-    		funct_run(item_id,object_id)
-    	else:
+        if b["interaction"] != None:
+            funct_run = b["interaction"]
+            funct_run(item_id,object_id)
+        else:
             print("Nothing interesting happens.")
     else:
-    	print("You cannot do that")
-			
+        print("You cannot do that")
+            
 def execute_examine(object):
     """Check if object is in inventory/room
     and return 'description' from the objects properties
     """
-	
+    
     found_object = False
     a = None
     for i in inventory :
-    	if i["id"] == object:
-    		found_object = True
-    		a = i
+        if i["id"] == object:
+            found_object = True
+            a = i
     if found_object == False:
-    	for i in current_room["objects"]:
-    		if i["id"] == object:
-    			found_object = True
-    			a = i
+        for i in current_room["objects"]:
+            if i["id"] == object:
+                found_object = True
+                a = i
     if found_object:
-    	print(a["description"])
-    	
+        print(a["description"])
+        
     else:
-    	print("You cannot do that.")
+        print("You cannot do that.")
 
 
 def execute_help():
@@ -464,7 +464,7 @@ def execute_command(command):
             execute_use(command[1], command[2])
         else:
             print("Use with what?")
-			
+            
     elif command[0] == "examine":
         if len(command) > 1:
             execute_examine(command[1])
@@ -514,7 +514,7 @@ def move(exits, direction):
     return rooms[exits[direction]]
 
 def main_menu():
-	# This is the entry point of our program
+    # This is the entry point of our program
         print("""                                                                                                     
      ##### ##                                /                                      /                
   ######  /##   #                          #/                    #                #/                 
@@ -535,18 +535,18 @@ def main_menu():
  ##                                              /                      ####   ###      /            
                                                 /                     /######  /#      /             
                                                /                     /     ###/       /              """)
-											   
+                                               
         print("\n\n\nTEAM13 - Chris Spencer, John Disandolo, Ellis Bailey, Stephanie Fang, Lirui Yang, Noah Giles, Harry Suggett & Jack Davies")
         input("\n\n\t\t\t\t\tPress ENTER to play")
         opening()
 
 def opening():
-	print("""\n\nThis story begins in a small town outside of the grand castle Otterberg.
+    print("""\n\nThis story begins in a small town outside of the grand castle Otterberg.
 You have lived in the town all of your life, managing to get an education from the
 your foster-father. One day he comes to you with a letter. He doesn't tell you who it
 is from, he just says to read it:
-	
-------------------------------------------------------------------------------------------------	
+    
+------------------------------------------------------------------------------------------------    
 "My beloved son
 
 Hopefully, you will never have to read this letter but if you are reading this, 
@@ -574,8 +574,8 @@ Wattus Rex was said to be impressed with your level of education and thought you
 great asset to the kingdom.
 
 The time has now come to claim your birthright...""")
-	input("\nPress ENTER to continue...\n")
-	main()
+    input("\nPress ENTER to continue...\n")
+    main()
 
 def main():
     time.sleep(1)
@@ -653,7 +653,7 @@ GAME OVER
             print_inventory_items(inventory)
             print()
             command = menu(current_room["exits"], current_room["items"], inventory)
-			
+            
             
             if execute_command(command) == False :
                 break

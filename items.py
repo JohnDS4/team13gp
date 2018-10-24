@@ -279,7 +279,7 @@ Your vision clears and you are back in the room.
 """)
         elif object_id== "catherine":
             print("""You suddenly have a strange feeling of dizziness  and your vision starts to spin.
-			
+            
 When your view becomes clear again, you find yourself standing in the middle of a throne room with the emblem of Aragon just beyond the throne.
 You realise that  you are at the crowning ceremony of Aragon’s new king, Catherine’s brother. The whole kingdom are celebrating except for the king’s sister;
 you can see the rage and annoyance on the lady’s face.
@@ -533,7 +533,7 @@ object_painting = {
     "id": "painting",
 
     "description": """
-		   
+           
                            A
                      ooo OOO OOO ooo
              J  oOO       /  \       OOo   C
@@ -561,7 +561,7 @@ object_painting = {
 
 'WHEN THE POINTS OF THE SOLOMONS SEAL BEFALLS ON THIS KINGDOM
         THE DORMANT CLOCK WILL START TO RUN'
-						   """,
+                           """,
 
     "interaction": None
 }

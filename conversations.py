@@ -24,7 +24,7 @@ conv_wizard = {
     "questions": ["What is your name?", "Are you ok?"],
 
     "responses": ["\"@!*&$, GET OUT OF HERE!\"", 
-	"\"NO! I have a splitting headache and don't need to be pestered by you!\"\n(The old man seems to have a hangover)"]
+    "\"NO! I have a splitting headache and don't need to be pestered by you!\"\n(The old man seems to have a hangover)"]
 
 }
 

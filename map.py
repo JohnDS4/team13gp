@@ -34,7 +34,7 @@ room_greathall = {
     "name": "Great Hall",
 
     "description":
-   	 """A Grand hall, with fine tapestries and paintings on every wall.
+     """A Grand hall, with fine tapestries and paintings on every wall.
 On a shelf near the door lies a single wooden goblet.
 A straight oak table stands in centre of the hall
 with many chairs. At the head of the table,
@@ -49,7 +49,7 @@ next to a fireplace, where a handful of coals lie""",
     "people": {"wizard":people_wizard},
 
     "puzzles" : [],
-	
+    
     "objects": [object_wizard]
 
 }
@@ -72,7 +72,7 @@ completed with an elegant red carpet.""",
                "viceroy":people_viceroy},
 
     "puzzles" : [],
-	
+    
     "objects": [object_king, object_viceroy]
 
 }
@@ -131,7 +131,7 @@ from the wall are falling away onto the floor.""",
     "people": {},
 
     "puzzles" : [],
-	
+    
     "objects": [object_grate, object_bed, object_guard]
 
 }
