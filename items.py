@@ -362,3 +362,35 @@ object_guard = {
 	"interaction": None
 }
 
+object_painting = {
+	"id": "painting",
+	
+	"description": print("""
+		   
+                           A
+                     ooo OOO OOO ooo
+             J  oOO       /  \       OOo   C
+             oOO         /    \         OOo
+          oOO           /      \           OOo
+     F  oOO            /        \             OOo   X
+      oOO    _________/________  \__________   OOo
+     oOO     \       /            \        /     OOo
+    oOO       \     /              \      /       OOo
+   oOO         \   /                \    /        OOo
+   oOO          \ /                  \  /         OOo  L
+   oOO           /                    \/          OOo
+ Q oOO          / \                  / \          OOo
+   oOO         /   \                /   \         OOo
+    oOO       /     \              /     \       OOo
+     oOO     /_______\____________/_______\     OOo
+      oOO             \          /             OOo
+        oOO            \        /             OOo   G
+       Y  oO            \      /            OOo
+             oOO         \    /          OOo
+                 oOO      \  /        OOo   N
+             K        ooo OOO OOO ooo
+                            B
+						   """)
+	
+	"interaction": None
+}

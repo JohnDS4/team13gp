@@ -17,3 +17,26 @@ He says the item is behind the painting in the room, which has a code inside tha
 When you examine the painting it shows a circle with a clue inside and a code to be deciphered on the outside
 Use the nearby dial to point to each letter in the right order to enter the code
 When correct the painting opens up and reveals the Time Turner which when used with people you can see their past
+The exits of the room are then sealed, the only way to escape is to use the time turner on the wizard
+When you do this the wizard's memory shows that he has given a bottle of poison to a woman in the throne room, in the background there is a painting of that woman
+He then says "you only have 2 uses left. What will you do with this memory?" and vanishes, unlocking the door at the same time
+Then you need to go out and get the poison by going to the throne room, the description of the great hall has changed, the servants are setting up for a banquet
+Also mentioned is the painting seen in the wizard's memory
+When you examine the painting, a bottle of poison falls to the floor
+
+You must then walk about the castle and use the time turner on 2 more people and decide who you are going to target
+
+You then must take the bottle to the great hall and choose whos drink to use the bottle on 
+
+Use lady:
+Stabbed by soldier game over
+
+Use viceroy:
+murdered by guards game over
+
+Use king:
+Trigger fight scene with viceroy when he tries to claim throne
+
+Then you must play the fight game, if you win you win the game
+
+
