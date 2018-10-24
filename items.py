@@ -355,7 +355,7 @@ object_wizard = {
     hungover or still possibly drunk from the night before,
     he sits mouth open with his head back, snoring loudly.""",
 
-    "interaction": inter_turner
+    "interaction": inter_cure
 
 }
 
