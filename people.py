@@ -60,7 +60,7 @@ he sits mouth open with his head back, snoring loudly.""",
 }
 
 people_soldier1 = {
-    "id": "Captain ",
+    "id": "thomas",
 
     "name": "Thomas",
 
@@ -74,9 +74,9 @@ people_soldier1 = {
 }
 
 people_soldier2 = {
-    "id": "Sergeant",
+    "id": "Captain",
 
-    "name": "Sergeant",
+    "name": "Captain",
 
     "description":
     """This is soldier 2.""",

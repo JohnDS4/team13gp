@@ -1,3 +1,4 @@
+from puzzles import *
 room_descriptions = {
 	"goblet_removed" : """A Grand hall, with fine tapestries and paintings on every wall.
 A straight oak table stands in centre of the hall
@@ -21,5 +22,13 @@ item_room_descriptions = {
 people_conversations = {
 	"wizard_cured" : "What can I do for you?",
 	"Qwizard_cured" : ["Can you help me?"],
-	"Rwizard_cured" : ["Sure"]
+	"Rwizard_cured" : ["Sure"],
+	"Qsoldier_paid" : ["Can you tell me who Gaius is now?", "Can I play a game?"],
+	"Rsoldier_paid" : ["I told you, he is the drunken old wizard staying in the great hall", "Sure, you can 'PLAY DICE' with me"],
+	"Qlady_change1" : ["I know Gaius is the drunken old wizard, can you help me cure him?"],
+	"Rlady_change1" : ["""Ok, but first I must test you. Answer me this riddle:
+
+'What's black when you buy it, red when you use it and white when you throw it away?'
+When you are ready, 'answer' the riddle."""],
+	"Plady_riddle" : [riddle_lady]
 }

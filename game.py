@@ -523,8 +523,45 @@ def main_menu():
                                                /                     /     ###/       /              """)
 											   
 	input("\n\n\n\t\t\t\t\tPress ENTER to play")
-	main()
+	opening()
+
+def opening():
+	print("""\n\nThis story begins in a small town outside of the grand castle Otterberg.
+You have lived in the town all of your life, managing to get an education from the
+your foster-father. One day he comes to you with a letter. He doesn't tell you who it
+is from, he just says to read it:
 	
+------------------------------------------------------------------------------------------------	
+"My beloved son
+
+Hopefully, you will never have to read this letter but if you are reading this, 
+it means something sinister has happened to us.
+
+Don’t blame us for sending you away, our priority was to keep you safe.
+
+Don’t try to claim it outright, but if you find yourself drawn to your birthright, seek out Gaius
+in the castle Otterberg.
+
+I know you will be brave, remember we love you no matter what.
+
+Your mother" 
+------------------------------------------------------------------------------------------------
+
+You are left lost for words as your foster-father explains to you that you are really the son of
+the recently deceased king and the true heir to the throne. 
+
+You have an unquenchable urge for answers. He gives you a small amount of gold and sends you on 
+your way to the castle.
+
+To have regular access to the castle and to find Gaius you must have a job there. You bide your time
+and manage to get yourself a job as a clerk looking after the gold of the kingdom. The new king
+Wattus Rex was said to be impressed with your level of education and thought you would be a
+great asset to the kingdom.
+
+The time has now come to claim your birthright...""")
+	input("\nPress ENTER to continue...\n")
+	main()
+
 def main():
 
     time.sleep(1)

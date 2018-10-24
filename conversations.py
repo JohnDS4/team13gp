@@ -39,19 +39,16 @@ I am called Catherine, I am from Aragon.
 My father sent me to this island, for what? 
 I not sure, the king has no interest in women,
 and his viceroy is nothing more than a merchant of lies.""",
-"""I can, but first you must answer me this...
-
-'What's black when you buy it, red when you use it and white when you throw it away?'
-When you are ready, 'answer' the riddle."""]
+"""I don't think I'm the person to ask that."""]
 
 }
 
 conv_soldier1 = {
-    "opening": "...",
+    "opening": "(The soldier is fully focused on his game)",
 
-    "questions": ["How are you?", "What is your name?", "Can I play a game?"],
+    "questions": ["How are you?", "What is your name?", "Can I play a game?", "Can you tell me who Gaius is?"],
 
-    "responses": ["I'm good.", "Thomas", "Sure, I'll 'PLAY DICE' with you"]
+    "responses": ["The dice are not going my way today.", "Thomas", "Sure, I'll 'PLAY DICE' with you", "I don't talk for free"]
 
 }
 

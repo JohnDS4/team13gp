@@ -72,24 +72,12 @@ item_sword = {
 	"interaction": None
 }
 
-item_potionbook = {
-    "id": "book",
-    
-    "name": "a book",
-
-    "description": "A book of potions *TODO-- ",
-
-    "mass": 0,
-	
-    "interaction": None
-}
-
 item_money = {
-    "id": "money",
+    "id": "gold",
     
-    "name": "a pile of money",
+    "name": "a pile of gold",
 
-    "description": "*TODO-- ",
+    "description": "Shiny gold!",
 
     "mass": 0,
 
@@ -214,6 +202,8 @@ item_rock = {
 	"interaction": None
 }
 
+
+
 object_grate = {
 	"id": "grate",
 	
@@ -325,21 +315,40 @@ object_viceroy = {
 	
 }
 
+def inter_gold(item_id):
+	from player import inventory
+	if item_id == 'gold' and item_money in inventory:
+		print("Ah gold, that's loosened my lips a little.")
+		print("Gaius is the old drunken wizard in the great hall.")
+		inventory.remove(item_money)
+		from conversations import conv_soldier1
+		from conversations import conv_lady
+		conv_soldier1["questions"] = people_conversations["Qsoldier_paid"]
+		conv_soldier1["responses"] = people_conversations["Rsoldier_paid"]
+		conv_lady["questions"] = people_conversations["Qlady_change1"]
+		conv_lady["responses"] = people_conversations["Rlady_change1"]
+		from map import room_courtyard
+		room_courtyard["puzzles"] = people_conversations["Plady_riddle"]
+	else:
+		print("Nothing interesting happens")
+		
+		
+
 object_soldier1 = {
-	"id": "soldier",
+	"id": "thomas",
 	
 	"description":
-    """This is the soldier.""",
+    """A strong soldier.""",
 	
-	"interaction": None
+	"interaction": inter_gold
 	
 }
 
 object_soldier2 = {
-	"id": "warrior",
+	"id": "captain",
 	
 	"description":
-    """This is the warrior.""",
+    """This is the captain of the guard.""",
 	
 	"interaction": None
 }
