@@ -397,12 +397,9 @@ def execute_use(item_id, object_id):
 	if found_item == True and found_object == True:
 		if b["interaction"] != None:
 			funct_run = b["interaction"]
-<<<<<<< HEAD
-			funct_run(item_id)
 			
-=======
 			funct_run(item_id,object_id)
->>>>>>> more_story
+
 		else:
 			print("Nothing interesting happens.")
 	else:
@@ -561,10 +558,7 @@ def main_menu():
                                                /                     /     ###/       /              """)
 											   
 	input("\n\n\n\t\t\t\t\tPress ENTER to play")
-<<<<<<< HEAD
-	main()
 
-=======
 	opening()
 
 def opening():

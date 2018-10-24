@@ -127,17 +127,4 @@ def dial_game():
 
 
 
-
-
-
-
-
 puzzles = {"dice":dice_game, "riddle":riddle_lady, "dial": dial_game}
-	
-<<<<<<< HEAD
-puzzles = {"dice":dice_game, "riddle":riddle_lady}
-	
-	
-=======
-
->>>>>>> more_story
