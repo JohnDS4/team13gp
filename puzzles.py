@@ -106,9 +106,13 @@ Here are some ingredients for a hangover cure. You'll definitely find this usefu
 They need to be mixed with water, so you'll need to find something else to contain it.""")
 		from player import inventory
 		from items import item_ingredients
+		from conversations import conv_lady
+		conv_lady["opening"] = """Leave me be now clerk. I've helped you more than I should."""
+		conv_lady["questions"] = ["But..."]
+		conv_lady["responses"] = ["(The lady turns away from you, she clearly doesn't want to talk)"]
 		inventory.append(item_ingredients)
 		from game import print_inventory_items
-		print_inventory_items(inventory)
+		
 	else:
 		print("WRONG! Try again.")
 	
@@ -117,13 +121,15 @@ They need to be mixed with water, so you'll need to find something else to conta
 def dial_game():
     if input("What code do you want to enter into the dial?\n--->").lower() == "axgbyf":
         print("the dial makes a sharp click and the painting slides back to reveal a hole")
-        print("the hole holds a 'time-turner'")
+        print("the hole holds the 'Timeturner'")
         print("the door closes behind you and you are locked in the room")
 
         from map import room_ante
-        from items import item_time_turner
+        from items import item_time_turner, object_wizard
         room_ante["exits"] = {}
         room_ante["items"].append(item_time_turner)
+        room_ante["objects"] = [object_wizard]
+        room_ante["puzzles"] = []
 
 
 

@@ -95,7 +95,7 @@ There is a single old boot in the middle of the walkway which seems odd to you."
 room_ante = {
     "name": "Anteroom",
 
-    "description": "temp desc. ###"
+    "description": """This is a mostly unused room in the castle. A few pieces of furniture here and there but other than that it is fairly nondescript.""",
 
     "exits": {"south": "Great Hall"},
 

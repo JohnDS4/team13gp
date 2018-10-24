@@ -441,7 +441,7 @@ def execute_command(command):
         else:
             print("Talk to whom?")
             
-    elif command[0] == "play" or command[0] == "answer":
+    elif command[0] == "play" or command[0] == "answer" or command[0] == "adjust":
         if len(command) > 1:
             execute_play(command[1])
         else:
@@ -563,21 +563,82 @@ The time has now come to claim your birthright...""")
 	main()
 
 def main():
-
     time.sleep(1)
     
     # Main game loop
     while True:
-        
+        from player import inventory
+        global inventory
+        if item_poison in inventory:
+            print("Now you must decide, who will you use the poison on?")
+            print("1. The King")
+            print("2. The Viceroy")
+            print("3. Catherine")
+            ans = input("PICK A NUMBER ---->")
+            if ans == "1":
+                print("""You pour the poison into the king's drink as he is not looking.
+He takes a sip and immediately his eyes open wide, head goes back and he hits the floor dead. This is some poison.
+
+The viceroy stands up and immediately shouts:
+"YOU! I knew you were trouble from day one clerk!, prepare to die!"
+
+You quickly grab the sword from the nearby soldier's scabbard...
+
+
+FINAL FIGHT - TYPE THE NUMBER THAT FLASHES ON SCREEN TO DEAL DAMAGE
+""")
+                input("PRESS ENTER TO FIGHT")
+                from fightGame import fight
+                player = {
+                "id":"player",
+                "name":"You",
+                "health": 100.00} 
+
+                computer = {
+                "id":"computer",
+                "name":"Viceroy",
+                "health":100.00
+}
+                time.sleep(100)
+                inventory = []
+                quit()
+            elif ans == "2":
+                print("""You pour the poison into the viceroy's drink as he is not looking.
+He is about to take a sip from his goblet... but quickly stops, sniffs the contents...
+
+"POISON!"
+
+"It was you wasn't it clerk! Throw him in the dungeon and make sure he never leaves!"
+
+You are thrown into a disgusting dungeon cell. You live the remainder of your very short life in here, making friends with the rats.
+
+GAME OVER
+""")
+                time.sleep(30)
+                quit()
+
+            elif ans == "3":
+                print ("""You pour the poison into the lady's drink as she is not looking.
+A guard notices what you have just done and charges you with his sword drawn!
+
+Your head flies off in an arc right onto the main meal platter
+At least you managed to ruin their banquet!
+
+GAME OVER
+""")
+                time.sleep(30)
+                quit()
         # Display game status (room description, inventory etc.)
         print_room(current_room)
-        print_inventory_items(inventory)
         print_people(current_room["people"])
 
         while True :
             # Execute the player's command and only repeat the above few lines of
             # code if the function returns True (see function documentation for more)
+            print_inventory_items(inventory)
+            print()
             command = menu(current_room["exits"], current_room["items"], inventory)
+			
             
             if execute_command(command) == False :
                 break

@@ -3,10 +3,10 @@ from conversations import *
 people_king = {
     "id": "king",
 
-    "name": "Wattus Rex",
+    "name": "King Wattus",
 
     "description":
-    """This is the king.""",
+    """This is the King Wattus Rex. Not very well liked.""",
 
     "conversation": conv_king,
 
@@ -20,7 +20,7 @@ people_viceroy = {
     "name": "the viceroy",
 
     "description":
-    """This is the viceroy.""",
+    """This is the viceroy. Not the nicest of people.""",
 
     "conversation": conv_viceroy,
 
@@ -65,7 +65,7 @@ people_soldier1 = {
     "name": "Thomas",
 
     "description":
-    """This is soldier 1.""",
+    """This is Thomas, a well respected soldier.""",
 
     "conversation": conv_soldier1,
 
@@ -79,7 +79,7 @@ people_soldier2 = {
     "name": "Captain",
 
     "description":
-    """This is soldier 2.""",
+    """This is the captain, a master of military tactics.""",
 
     "conversation": conv_soldier2,
 

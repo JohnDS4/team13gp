@@ -8,14 +8,14 @@ import os
 
 player = {
 	"id":"player",
-	"name":"clark",
+	"name":"You",
 	"health": 100.00
 
 } 
 
 computer = {
-	"id":"computer",
-	"name":"computer",
+	"id":"Viceroy",
+	"name":"Viceroy",
 	"health":100.00
 }
 accsi_print = {
@@ -70,7 +70,7 @@ art = {
 }
 
 
-def fight(player,computer):
+def fight(player = player,computer = computer):
 	'''this function takes a player dict and people dict as input
 	fight(people_player{} , people_x{})'''
 	t = time.sleep(1)
@@ -101,23 +101,23 @@ def fight(player,computer):
 			os.system('cls')
 		elif b == a and computer["health"] > 50:
 			computer["health"] -= 15
-			print("you're growning weaker with every strike %s \n computer heath is %s" % (computer["name"], computer["health"]))
+			print("you're growing weaker with every strike %s \n computer health is %s" % (computer["name"], computer["health"]))
 			time.sleep(2)
 			os.system('cls')
 		elif b != a and player["health"] > 50:
 			computer["health"] -= 15
-			print("you're growning weaker with every strike %s \n computer heath is %s" % (computer["name"], computer["health"]))
+			print("you're growing weaker with every strike %s \n computer health is %s" % (computer["name"], computer["health"]))
 			time.sleep(2)
 			os.system('cls')	
 		elif b == a and  computer["health"] < 50:
 			computer["health"] -= 15
-			print("Your rain of terror is almost over %s \n computer heath is %s" % (computer["name"], computer["health"]))
+			print("Your reign of terror is almost over %s \n computer health is %s" % (computer["name"], computer["health"]))
 			time.sleep(2)
 			os.system('cls')
 			t = 0.5
 		elif b != a and player["health"] < 50 :
 			computer["health"] -= 15
-			print("You've been pretending all tiem %s \n but you cant pretend in combat" % (player["name"]))
+			print("You've been pretending all time %s \n but you cant pretend in combat" % (player["name"]))
 			time.sleep(2)
 			os.system('cls')
 			t = 1

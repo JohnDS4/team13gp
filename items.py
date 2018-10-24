@@ -218,17 +218,84 @@ def inter_turner(item_id,object_id):
     if time_counter<3:
 
         if object_id== "wizard":
-            print("wizard's past ###")
+            print("""You suddenly feel dizzy and your vision starts to spin. Before you blackout you have a vision. 
+
+You realise that you are standing in the Throne Room stood before the empty throne but you notice that the fabric is different, it doesn't look as dusty as it did before. 
+There is an orange hue which complements the azure banners that are hanging from the ceiling,
+Your vision shifts and begins to bounce as you make your way across the room. You stop to admire the paintings on the wall, but one stands out to you in particular.
+As an arm reaches up behind the painting, you recognise  the bright saturn sleeve with the clean gold band around the wrist.
+It could only be the hand of the wizard which now seems to be empty.
+*Whap*
+Your vision clears and you are back in the room.  You hear the wizard mumble something about gravy for the brain before stumbling out of the room,
+clearly the door to the south is now open again.
+""")
+            from map import room_greathall, room_throne, room_ante
+            from people import people_king, people_viceroy, people_lady, people_soldier1, people_soldier2
+            room_greathall["people"] = {"king":people_king, "viceroy": people_viceroy, "catherine": people_lady, "thomas": people_soldier1, "captain": people_soldier2}
+            room_greathall["objects"] = [object_king, object_viceroy, object_lady2, object_soldier1, object_soldier2]
+            room_greathall["exits"] = {"west": "Throne Room"}
+            room_ante["exits"] = {"south": "Great Hall"}
+            room_greathall["description"] = """The door to the anteroom immediately locks behind you.
+The room is different to how you saw it before, everything has been cleaned and servants are preparing the table.
+Everyone except the wizard is in here sitting down waiting for a meal with their drinks.
+The exits to the courtyard and battlements are bolted shut, must be a lock in.
+This seems like the perfect opportunity to make your move. The wizard's vision must have been a clue, maybe you should check the throne room."""
+            room_throne["description"] = """The room is quiet and still. You instantly recognise the painting on the far wall from your vision of the wizard's past.
+You remove it from the wall, look behind it and see a bottle of poison."""
+            room_throne["items"] = [item_poison]
         elif object_id== "king":
-            print("wizard's past ###")
+            print("""You suddenly feel dizzy and your vision starts to rotate. 
+
+When your view becomes clear again, you find that you are standing in the your uncle’s chamber, and your father, the old king, is also in the chamber although he looks much younger than you remember.
+Old king:”How dare you to do such a thing, like falling in love with a man! Think of the reputation of our kingdom!”
+Uncle:”Is my sexual orientation the original sin or you are just afraid my existence is a threat to your throne?”
+The viceroy went to find your uncle after the old king left.
+Viceroy:” The only way for you to get past this is to kill the king and then you will be next in line. Then no one will restrict who you fall in love with.”
+…
+This starts a  war between Otterberg and Aragon, the king went to the field himself. Although Otterberg won the battle, the king got injured.
+The assassins were too afraid and reluctant to kill the old king, so the new king knew he had to kill the old king himself.
+The old king was found dead during the journey back from the war, it was suspected that he died to poison.
+*Whap*
+Your vision clears and you are back in the room.
+""")
         elif object_id== "viceroy":
-            print("wizard's past ###")
+            print("""You suddenly feel dizzy and your vision starts  to rotate.
+
+When your vision becomes clear again, you find yourself standing in the mayor’s office. 
+The viceroy, the biggest coal merchant in the kingdom, is facing a charge of selling the royal family unqualified goods. 
+“Viceroy, I have received a letter from an officer. ”
+After reading the letter, viceroy: “This cannot be  true, there is nothing wrong with my goods, they are as legitimate as they could be. ”
+“I do not doubt that but...you know, you shouldn’t offend the royal family. ”
+The Viceroy tries to appeal to his honesty and legitimacy of his goods  but in the end he not only would have to reduce the price of his goods but would also be amerced for his alleged offenses.
+From this point onwards, the viceroy’s lust for power only grew more and more.  
+To become more powerful, he needed a puppet king, so his attention was drawn towards the king’s weaker brother.
+He decided that he would manipulate the king’s brother to kill the king, for if he had the new king in his pocket, he would be both the richest and the most powerful man in the kingdom.
+*Whap*
+Your vision clears and you are back in the room.
+""")
         elif object_id== "catherine":
-            print("wizard's past ###")
-        elif object_id== "thomas":
-            print("wizard's past ###")
+            print("""You suddenly have a strange feeling of dizziness  and your vision starts to spin.
+			
+When your view becomes clear again, you find yourself standing in the middle of a throne room with the emblem of Aragon just beyond the throne.
+You realise that  you are at the crowning ceremony of Aragon’s new king, Catherine’s brother. The whole kingdom are celebrating except for the king’s sister;
+you can see the rage and annoyance on the lady’s face.
+*Whap*
+Your vision starts to rotate again, you hear the lady is asking for a marriage alliance and the unwelcome feeling you get makes you feel that something terrible is in the works.
+""")
         elif object_id== "captain":
-            print("wizard's past ###")
+            print("""You suddenly feel dizzy and your vision starts to spin.  
+
+You find yourself in a tavern. You notice that the soldier is sat drinking around a table with what looks like his friends.
+Nothing here seems to be of much use to you. Maybe you shouldn’t have used the time turner on the soldier…
+*Whap*
+Your vision clears and you are back in the room.
+""")
+        elif object_id== "thomas":
+            print("""You suddenly feel dizzy and your vision starts to spin. 
+You find yourself stood next to a cot. There is a baby sleeping peacefully in the cot. Could it be the soldier?
+*Whap*
+Your vision clears and you are back in the room.
+""")
         else:
             print("Nothing happens")
             return
@@ -239,7 +306,7 @@ def inter_turner(item_id,object_id):
 item_time_turner = {
     "id": "timeturner",
 
-    "name": "a time-turner",
+    "name": "the Timeturner",
 
     "description": "a magical artifact that looks into people's past",
 
@@ -248,6 +315,17 @@ item_time_turner = {
     "interaction": inter_turner
 }
 
+item_poison = {
+    "id": "poison",
+
+    "name": "poison",
+
+    "description": "A powerful poison",
+
+    "mass": 0,
+
+    "interaction": None
+}
 object_grate = {
     "id": "grate",
 
@@ -309,6 +387,18 @@ object_lady = {
     "interaction": None
 }
 
+object_lady2 = {
+    "id": "catherine",
+
+    "description":
+        """Catherine of Aragon,
+    a noble lady from a different land.
+    She is weathly and well-spoken, although she
+    still speaks with a Franco-Spanish accent.""",
+
+    "interaction": inter_turner
+}
+
 
 def inter_cure(item_id, object_id):
     from player import inventory
@@ -318,7 +408,7 @@ def inter_cure(item_id, object_id):
         print("The wizard sniffs it curiously. Then proceeds to drink the contents...\n")
         inventory.remove(item_hangover)
         print("""The wizard seems to recover from his hangover instantly!
-        If only you knew what ingredients the lady used to make such a potion.""", "\n")
+If only you knew what ingredients the lady used to make such a potion.""", "\n")
         print("I cannot talk here. Meet me in the anteroom")
         conv_wizard["opening"] = people_conversations["wizard_cured"]
         conv_wizard["questions"] = people_conversations["Qwizard_cured"]
@@ -328,12 +418,17 @@ def inter_cure(item_id, object_id):
         from map import room_ante
         from people import people_wizard
 
-
-        room_ante["description"] = "new desc. ###"
+        room_greathall["description"] = """A Grand hall, with fine tapestries and paintings on every wall.
+A straight oak table stands in centre of the hall
+with many chairs. At the head of the table,
+a grand gilded chair dominates the room."""
+        room_ante["description"] = """The room is the same as ever. However you now happen to notice an odd picture on the wall with a
+mechanical dial next to it."""
         room_greathall["people"] = {}
         room_greathall["objects"] = []
+        room_greathall["items"] = []
         room_ante["people"] = {"wizard": people_wizard}
-        room_ante["objects"] = [object_wizard]
+        room_ante["objects"] = [object_wizard, object_dial, object_painting]
         object_wizard["interaction"] = inter_turner
 
 
@@ -368,7 +463,7 @@ object_king = {
     "description":
         """This is the king.""",
 
-    "interaction": None
+    "interaction": inter_turner
 
 }
 
@@ -378,7 +473,7 @@ object_viceroy = {
     "description":
         """This is the viceroy.""",
 
-    "interaction": None
+    "interaction": inter_turner
 
 }
 
@@ -397,6 +492,7 @@ def inter_gold(item_id,object_id):
         conv_lady["responses"] = people_conversations["Rlady_change1"]
         from map import room_courtyard
         room_courtyard["puzzles"] = people_conversations["Plady_riddle"]
+        object_soldier1["interaction"] = inter_turner
     else:
         print("Nothing interesting happens")
 
@@ -417,7 +513,7 @@ object_soldier2 = {
     "description":
         """This is the captain of the guard.""",
 
-    "interaction": None
+    "interaction": inter_turner
 }
 
 object_guard = {
