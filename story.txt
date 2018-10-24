@@ -1,35 +1,42 @@
-The purpose of this document is to share and work on story and plot point. 
+In courtyard need to find Gaius
+Ask about the castle
+Soldier Thomas will help you if given gold
+Tells you Gaius is wizard in great hall
+Go to wizard, he is hungover and will not talk
+Go to catherine and ask for help
+She will help you if you can solve a riddle
+When you solve the riddle, she gives you some ingredients, tells you to mix them in a container full of water
+Two containers available; the goblet and the old boot. Goblet is obvious one to choose but will be refused by wizard
+When you have a container you need to fill it with water first which means using it on the water fountain in the courtyard
+Then you must use the ingredients with the container full of water to create the hangover cure
+If you use the old boot as the container, the wizard will accept it and drink the cure
+The wizard will then become lucid and help you
+He tells you that it is not safe to talk in the great hall and says for you to talk in the anteroom
+Go to the anteroom and talk to the wizard again, he will tell you he is being conspired against and you need a special item to be named later
+He says the item is behind the painting in the room, which has a code inside that needs to be solved
+When you examine the painting it shows a circle with a clue inside and a code to be deciphered on the outside
+Use the nearby dial to point to each letter in the right order to enter the code
+When correct the painting opens up and reveals the Time Turner which when used with people you can see their past
+The exits of the room are then sealed, the only way to escape is to use the time turner on the wizard
+When you do this the wizard's memory shows that he has given a bottle of poison to a woman in the throne room, in the background there is a painting of that woman
+He then says "you only have 2 uses left. What will you do with this memory?" and vanishes, unlocking the door at the same time
+Then you need to go out and get the poison by going to the throne room, the description of the great hall has changed, the servants are setting up for a banquet
+Also mentioned is the painting seen in the wizard's memory
+When you examine the painting, a bottle of poison falls to the floor
 
-Please use clear headings and sub heading
+You must then walk about the castle and use the time turner on 2 more people and decide who you are going to target
+
+You then must take the bottle to the great hall and choose whos drink to use the bottle on 
+
+Use lady:
+Stabbed by soldier game over
+
+Use viceroy:
+murdered by guards game over
+
+Use king:
+Trigger fight scene with viceroy when he tries to claim throne
+
+Then you must play the fight game, if you win you win the game
 
 
-
-OPENING OF GAME.
-
-	Court yard:
-the player enters the game in the court yard its the early morning the Keep is still.
-	
-options 
-go west battlements 
-go east anti-room 
-go south great-hall
-
-talk to lady of the court 
-
-
-
-
-
-	Great-hall:
-The player enters the great hall it’s untidy from the night before, there’s a scraggy old man with long untidy beard, snoring loudly, head back mouth wide open. The hat lying on the floor behind his is unimpressive, faded red velvet with what were once diligently embroidered gold stars and the word Wiz-ard.
-
-Options 
-go south thrown room
-go north court yard 
-go west anti-room
-
-talk to wizard
-
-
-
-	

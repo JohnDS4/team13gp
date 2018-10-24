@@ -22,7 +22,7 @@ There are flower pots on the wall with beautiful foxgloves growing in them.
 
     "people": {"lady":people_lady, "catherine":people_lady},
 
-    "puzzles" : [riddle_lady],
+    "puzzles" : [],
 
     "objects": [object_fountain, object_lady, object_flowerpot]
 
@@ -84,7 +84,7 @@ There is a single old boot in the middle of the walkway which seems odd to you."
 
     "items": [item_oldboot],
 
-    "people": {"soldier":people_soldier1, "warrior":people_soldier2},
+    "people": {"soldier":people_soldier1, "thomas":people_soldier1, "captain":people_soldier2},
 
     "puzzles" : [dice_game],
 
@@ -100,13 +100,13 @@ room_ante = {
 
     "exits": {"south": "Great Hall"},
 
-    "items": [],
+    "items": [item_time_turner],
 
     "people": {},
 
-    "puzzles" : [],
+    "puzzles" : [dial_game],
 
-    "objects": []
+    "objects": [object_painting, object_dial]
 
 }
 

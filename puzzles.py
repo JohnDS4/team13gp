@@ -112,7 +112,32 @@ They need to be mixed with water, so you'll need to find something else to conta
 	else:
 		print("WRONG! Try again.")
 	
+
+
+def dial_game():
+    if input("What code do you want to enter into the dial?\n--->").lower() == "axgbyf":
+        print("the dial makes a sharp click and the painting slides back to reveal a hole")
+        print("the hole holds a 'time-turner'")
+        print("the door closes behind you and you are locked in the room")
+
+        from map import room_ante
+        from items import item_time_turner
+        room_ante["exits"] = {}
+        room_ante["items"].append(item_time_turner)
+
+
+
+
+
+
+
+
+puzzles = {"dice":dice_game, "riddle":riddle_lady, "dial": dial_game}
 	
+<<<<<<< HEAD
 puzzles = {"dice":dice_game, "riddle":riddle_lady}
 	
 	
+=======
+
+>>>>>>> more_story
