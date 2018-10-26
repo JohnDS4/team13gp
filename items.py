@@ -215,7 +215,8 @@ item_rock = {
 time_counter = 0
 def inter_turner(item_id,object_id):
     global time_counter
-    if time_counter<3:
+    from player import inventory
+    if time_counter<3 and item_time_turner in inventory:
 
         if object_id== "wizard":
             print("""You suddenly feel dizzy and your vision starts to spin. Before you blackout you have a vision. 
@@ -304,6 +305,9 @@ Your vision clears and you are back in the room.
             print("Nothing happens")
             return
         time_counter += 1
+    elif item_time_turner not in inventory:
+        print("Nothing interesting happens.")
+
     else:
         print("You have used up the magic in this artifact")
 
